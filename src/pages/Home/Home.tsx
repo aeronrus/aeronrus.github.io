@@ -1,19 +1,19 @@
 import React, { useCallback } from "react";
 import qs from 'qs';
-import '../scss/app.scss';
-import Categories from "../components/Categories/Categories";
-import Sort from "../components/Sort/Sort";
-import PizzaBlock from "../components/Pizza-block/PizzaBlock";
-import Error  from "./Error";
-import Skeleton from "../components/Pizza-block/Skeleton";
-import Pagination from "../components/Pagination/Pagination";
+import '../../scss/app.scss';
+import Categories from "../../components/Categories/Categories";
+import Sort from "../../components/Sort/Sort";
+import PizzaBlock from "../../components/Pizza-block/PizzaBlock";
+import Error  from "../Error/Error";
+import Skeleton from "../../components/Pizza-block/Skeleton";
+import Pagination from "../../components/Pagination/Pagination";
 import { useSelector} from "react-redux";
-import { setCategoryId, setCurrentPage } from "../redux/filter/slice";
-import { selectFilter } from "../redux/filter/selector";
-import { fetchPizzas } from "../redux/pizza/slice";
-import { selectPizza } from "../redux/pizza/selector";
+import { setCategoryId, setCurrentPage } from "../../redux/filter/slice";
+import { selectFilter } from "../../redux/filter/selector";
+import { fetchPizzas } from "../../redux/pizza/slice";
+import { selectPizza } from "../../redux/pizza/selector";
 import {  useNavigate } from "react-router-dom";
-import { useAppDispatch } from "../redux/store";
+import { useAppDispatch } from "../../redux/store";
 
 
 
@@ -28,8 +28,8 @@ const Home : React.FC= () => {
   const {pizzas, status}=useSelector(selectPizza)
   
 const sorts=['rating','price','title']
-
-
+const params = qs.parse(window.location.search.substring(1))
+console.log(params)
 const searchCategory=categoryId>0? `category=${categoryId}` : '';
 const search=searchValue?`search=${searchValue}`:''
 const onChangePage=(number:number)=>{
@@ -42,7 +42,6 @@ const onClickCategory = useCallback((id:number) => {
   dispatch(setCategoryId(id))
  
 },[])
-
 
 
 
