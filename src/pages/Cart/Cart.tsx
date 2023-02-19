@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import logo from '../../assets/img/pizza-logo.svg';
 import { clearItems, updateTotalPrice } from '../../redux/cart/slice';
 import { selectCart } from '../../redux/cart/selector';
@@ -8,6 +8,7 @@ import CartEmpty from './CartEmpty';
 import CartItem from './CartItem';
 
 const Cart: React.FC = () => {
+  const navigate = useNavigate()
   const dispatch = useDispatch();
   const { items, totalPrice } = useSelector(selectCart);
 
@@ -130,9 +131,9 @@ const Cart: React.FC = () => {
                       />
                     </svg>
 
-                    <NavLink to="/">
-                      <span>Вернуться назад</span>
-                    </NavLink>
+                    <div onClick={()=>navigate('/')}>
+                      <span>Вернуться назад </span>
+                    </div>
                   </a>
                   <div className="button pay-btn">
                     <span>Оплатить сейчас</span>
