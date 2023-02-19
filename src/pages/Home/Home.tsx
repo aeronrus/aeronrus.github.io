@@ -56,7 +56,7 @@ const getPizzas = async () => {
       currentPage: String(currentPage)
     }))
     
-    window.scrollTo(0,0)
+    
 }
 
 
