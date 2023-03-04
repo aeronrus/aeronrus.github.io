@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-![Screnshot] (https://github.com/aeronrus/pizza-store/blob/main/pizzaImage1.jpg)
+![Screnshot] (https://github.com/aeronrus/pizza-store/MBFU/blob/main/pizzaImage1.jpg)
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
