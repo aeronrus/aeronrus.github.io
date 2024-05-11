@@ -1,10 +1,10 @@
-import {configureStore, combineReducers} from '@reduxjs/toolkit'
-import filter from './filter/slice'
-import cart from './cart/slice'
-import pizza from './pizza/slice'
-import { useDispatch } from 'react-redux'
+import { configureStore, combineReducers } from '@reduxjs/toolkit';
+import filter from './filter/slice';
+import cart from './cart/slice';
+import pizza from './pizza/slice';
+import { useDispatch } from 'react-redux';
 
-import { 
+import {
   persistStore,
   persistReducer,
   FLUSH,
@@ -13,21 +13,18 @@ import {
   PERSIST,
   PURGE,
   REGISTER,
-} from 'redux-persist'
-import storage from 'redux-persist/lib/storage'
+} from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 
-
-const rootReducer = combineReducers({filter, 
-  cart,
-  pizza})
+const rootReducer = combineReducers({ filter, cart, pizza });
 
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist:['cart']
-}
+  whitelist: ['cart'],
+};
 
-const persistedReducer=persistReducer(persistConfig, rootReducer)
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
   reducer: persistedReducer,
@@ -37,9 +34,9 @@ export const store = configureStore({
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     }),
-})
+});
 
-export const persistor=persistStore(store)
-export type RootState=ReturnType<typeof store.getState>
+export const persistor = persistStore(store);
+export type RootState = ReturnType<typeof store.getState>;
 type AppDispatch = typeof store.dispatch;
 export const useAppDispatch = () => useDispatch<AppDispatch>();
