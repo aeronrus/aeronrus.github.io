@@ -1,2 +1,2 @@
-import { RootState } from "../store";
-export const selectPizza=(state: RootState)=>state.pizza
+import { RootState } from '../store';
+export const selectPizza = (state: RootState) => state.pizza;
