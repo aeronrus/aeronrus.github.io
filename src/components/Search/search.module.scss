@@ -1,67 +1,82 @@
-.delete_icon{
-  position:absolute;
+.delete_icon {
+  position: absolute;
   left: 690px;
   z-index: 2;
   width: 20px;
   height: 20px;
   cursor: pointer;
 
-  &:hover{
+  &:hover {
     width: 25px;
     height: 25px;
   }
 }
-.container{
+.container {
   position: relative;
 }
 
-.input{
-  
-
-  position:absolute;
+.input {
+  position: absolute;
   left: 370px;
   width: 350px;
-  height:35px;
+  height: 35px;
   font-size: 17px;
 }
 
-
-.search_icon{
-  position:absolute;
+.search_icon {
+  position: absolute;
   left: 345px;
   z-index: 2;
   width: 20px;
   height: 20px;
   cursor: pointer;
 
-  &:hover{
+  &:hover {
     width: 25px;
     height: 25px;
   }
 }
 
 @media (max-width: 1260px) {
-.input{
+  .input {
     width: 350px;
   }
 }
-  @media (max-width: 950px) {
-    .input {
+@media (max-width: 950px) {
+  .input {
     max-width: 250px;
-    position:relative;
-    left:0px;
+    position: relative;
+    left: 0px;
   }
-.delete_icon{
-  left: 490px;
+  .delete_icon {
+    left: 490px;
+  }
 }
-}
-  @media (max-width: 750px) {
-    .input{
+@media (max-width: 750px) {
+  .input {
     max-width: 200px;
-    position:relative;
-    left:0px;
-    }
-    .delete_icon{
-      left: 290px;
-    }
+    position: relative;
+    left: 0px;
   }
+  .delete_icon {
+    left: 420px;
+  }
+}
+
+@media (max-width: 650px) {
+  .delete_icon {
+    left: 300px;
+    margin-top: 8px;
+  }
+}
+@media (max-width: 465px) {
+  .delete_icon {
+    left: 220px;
+  }
+}
+
+@media (max-width: 308px) {
+  .delete_icon {
+    left: 190px;
+  }
+}
